@@ -4,7 +4,8 @@
 			"name": "Intro",
 			"icon": "icon.svg",
 			"bg": "#2bb1f3",
-			"progress": 100
+			"onpage": 5,
+			"numpages": 5
 		}
 	],
 	[
@@ -12,13 +13,15 @@
 			"name": "Variables",
 			"icon": "varkeyword.png",
 			"bg": "#3f51b5",
-			"progress": 33
+			"onpage": 2,
+			"numpages": 6
 		},
 		{
 			"name": "Functions",
 			"icon": "fnkeyword.png",
 			"bg": "#3f51b5",
-			"progress": 0
+			"onpage": 0,
+			"numpages": 8
 		}
 	]
 ]
