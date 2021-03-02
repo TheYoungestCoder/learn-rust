@@ -1,0 +1,87 @@
+:root {
+	--skill-size: 110px;
+	--skill-progress-size: 20px;
+	--skill-inner-size: calc(var(--skill-size) - var(--skill-progress-size));
+	--half-inner-size: calc(var(--skill-inner-size) / 2);
+	--half-skill-size: calc(var(--skill-size) / 2);
+}
+
+.pie-chart {
+	width: var(--skill-size);
+	height: var(--skill-size);
+	border-radius: 50%;
+	background-color: #E5E5E5;
+	position: relative;
+}
+
+.pie-chart.gt-50 {
+	background-color: #81CE97;
+}
+
+.progress {
+	position: absolute;
+	left: calc(50% - var(--half-skill-size));
+	top: calc(50% - var(--half-skill-size));
+	width: var(--skill-size);
+	height: var(--skill-size);
+	clip: rect(0, var(--skill-size), var(--skill-size), var(--half-skill-size));
+}
+
+.progress .progress-fill {
+	position: absolute;
+	border-radius: 50%;
+	left: calc(50% - var(--half-skill-size));
+	top: calc(50% - var(--half-skill-size));
+	width: var(--skill-size);
+	height: var(--skill-size);
+	background: #81CE97;
+	transform: rotate(60deg);
+}
+
+.gt-50 .progress,
+.progress .progress-fill {
+	clip: rect(0, var(--half-skill-size), var(--skill-size), 0);
+}
+
+.gt-50 .progress .progress-fill {
+	clip: rect(0, var(--skill-size), var(--skill-size), var(--half-skill-size));
+	background: #E5E5E5;
+}
+
+.bg {
+	position: absolute;
+	border-radius: 50%;
+	left: calc(50% - var(--half-inner-size));
+	top: calc(50% - var(--half-inner-size));
+	width: var(--skill-inner-size);
+	height: var(--skill-inner-size);
+	background: no-repeat border-box center, #fff;
+	background-size: contain;
+	text-align: center;
+}
+
+.label {
+	display: inline-block;
+	margin-top: 10px;
+    width: var(--skill-size);
+    text-align: center;
+    font-family: verdana;
+    font-size: large;
+}
+
+.skills {
+	display: flex;
+	flex-direction: column;
+}
+
+.skills .row {
+	margin: 20px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.skill {
+	display: block;
+	color: initial;
+}

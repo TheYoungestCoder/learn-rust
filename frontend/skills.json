@@ -1,0 +1,24 @@
+[
+	[
+		{
+			"name": "Intro",
+			"icon": "icon.svg",
+			"bg": "#2bb1f3",
+			"progress": 100
+		}
+	],
+	[
+		{
+			"name": "Variables",
+			"icon": "varkeyword.png",
+			"bg": "#3f51b5",
+			"progress": 33
+		},
+		{
+			"name": "Functions",
+			"icon": "fnkeyword.png",
+			"bg": "#3f51b5",
+			"progress": 0
+		}
+	]
+]
