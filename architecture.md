@@ -9,33 +9,14 @@
 * `todo: ` process sign ins and sign ups (I will send the request through [form input](https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data))
 * `todo: ` serve `progress.json` over the server, here is what the input might look like
 ```json
-[
-	[
-		{
-			"name": "Intro",
-			"icon": "icon.svg",
-			"bg": "#2bb1f3",
-			"onpage": 5,
-			"numpages": 5
-		}
-	],
-	[
-		{
-			"name": "Variables",
-			"icon": "varkeyword.png",
-			"bg": "#3f51b5",
-			"onpage": 2,
-			"numpages": 6
-		},
-		{
-			"name": "Functions",
-			"icon": "fnkeyword.png",
-			"bg": "#3f51b5",
-			"onpage": 0,
-			"numpages": 8
-		}
-	]
-]
+[{
+	"name": "intro to rust",
+	"icon": "logo.svg",
+	"shortname": "intro",
+	"caption": "project: creating a hello world program in rust and run it",
+	"onpage": 2,
+	"numpage": 4
+}]
 ```
 * `onpage` is the page that the user is currently on in the topic
 * `numpages` is the number of pages in that topic

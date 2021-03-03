@@ -1,87 +1,152 @@
 :root {
-	--skill-size: 110px;
-	--skill-progress-size: 20px;
-	--skill-inner-size: calc(var(--skill-size) - var(--skill-progress-size));
-	--half-inner-size: calc(var(--skill-inner-size) / 2);
-	--half-skill-size: calc(var(--skill-size) / 2);
+	--caption-color: #9cb3c9
 }
 
-.pie-chart {
-	width: var(--skill-size);
-	height: var(--skill-size);
-	border-radius: 50%;
-	background-color: #E5E5E5;
-	position: relative;
+html {
+	font-family: 'Helvetica Neue';
+	background: linear-gradient(to bottom, #1f364d, #0e2439);
+	min-height: 100vh;
+	color: #fff;
+	-webkit-tap-highlight-color: transparent
 }
 
-.pie-chart.gt-50 {
-	background-color: #81CE97;
+* {
+	box-sizing: border-box
 }
 
-.progress {
+header {
+	display: grid;
+	grid-template-columns: max-content 1fr;
 	position: absolute;
-	left: calc(50% - var(--half-skill-size));
-	top: calc(50% - var(--half-skill-size));
-	width: var(--skill-size);
-	height: var(--skill-size);
-	clip: rect(0, var(--skill-size), var(--skill-size), var(--half-skill-size));
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: .5em;
+	text-transform: uppercase
 }
 
-.progress .progress-fill {
-	position: absolute;
-	border-radius: 50%;
-	left: calc(50% - var(--half-skill-size));
-	top: calc(50% - var(--half-skill-size));
-	width: var(--skill-size);
-	height: var(--skill-size);
-	background: #81CE97;
-	transform: rotate(60deg);
+header a {
+	font-size: larger
 }
 
-.gt-50 .progress,
-.progress .progress-fill {
-	clip: rect(0, var(--half-skill-size), var(--skill-size), 0);
-}
-
-.gt-50 .progress .progress-fill {
-	clip: rect(0, var(--skill-size), var(--skill-size), var(--half-skill-size));
-	background: #E5E5E5;
-}
-
-.bg {
-	position: absolute;
-	border-radius: 50%;
-	left: calc(50% - var(--half-inner-size));
-	top: calc(50% - var(--half-inner-size));
-	width: var(--skill-inner-size);
-	height: var(--skill-inner-size);
-	background: no-repeat border-box center, #fff;
-	background-size: contain;
-	text-align: center;
-}
-
-.label {
-	display: inline-block;
-	margin-top: 10px;
-    width: var(--skill-size);
-    text-align: center;
-    font-family: verdana;
-    font-size: large;
-}
-
-.skills {
-	display: flex;
-	flex-direction: column;
-}
-
-.skills .row {
-	margin: 20px 0;
+header ul {
+	list-style: none;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0;
+	color: transparent;
+	padding-left: 10px
 }
 
-.skill {
-	display: block;
-	color: initial;
+header a {
+	background-color: var(--caption-color);
+	-webkit-background-clip: text;
+	margin: 0 10px
+}
+
+header a:hover {
+	background-color: #fff
+}
+
+header li.important a:hover {
+	background-image: linear-gradient(to right, #3ec7e0, #526bf4)
+}
+
+header a,
+header li * {
+	color: inherit;
+	text-decoration: none
+}
+
+@media (max-width: 425px) {
+	header {
+		font-size: small;
+	}
+}
+
+@media (max-width: 385) {
+	header {
+		font-size: x-small;
+	}
+}
+
+main {
+	margin-top: 100px
+}
+
+h1,
+h1+p {
+	text-align: center
+}
+
+p {
+	color: var(--caption-color)
+}
+
+.caption {
+	margin-top: 5px
+}
+
+.topics {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 70vw;
+	flex-wrap: wrap;
+	margin: 0 auto
+}
+
+@media (max-width:900px) {
+	.topics {
+		width: 80vw
+	}
+}
+
+@media (max-width:800px) {
+	.topics {
+		width: 90vw
+	}
+}
+
+.topic-card {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: row;
+	position: relative;
+	width: 300px;
+	height: 150px;
+	background: #284158;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 26px;
+	color: unset;
+	text-decoration: none;
+	transition: transform .2s ease-in-out
+}
+
+.topic-card img {
+	width: 64px;
+	height: 64px;
+	margin-right: 15px;
+	border-radius: 50%;
+	object-fit: contain;
+	flex: 0 0 auto;
+}
+
+
+.topic-card:hover {
+	transform: scale(1.1)
+}
+
+.topic-card::after {
+	background: linear-gradient(90deg, #29bb9c var(--completion, 100%), #bdc3c7 var(--completion, 100%));
+	content: "";
+	height: 10px;
+	border-radius: 5px;
+	left: 26px;
+	position: absolute;
+	bottom: 15px;
+	width: calc(100% - 52px)
 }
